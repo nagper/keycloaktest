@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.lhsystems.iocc</groupId>
+    <version>1.1.13-SNAPSHOT</version>
+    <artifactId>security-datamigration</artifactId>
+
+    <packaging>jar</packaging>
+
+    <repositories>
+        <repository>
+            <id>Cloud IOCC Group</id>
+            <url>https://nexus-iocccoco.devtools.lhsystems.int/repository/iocc-group/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-admin-client</artifactId>
+            <version>17.0.1</version>
+        </dependency>
+
+    </dependencies>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.1.6.RELEASE</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                        <id>repackage</id>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>com.lhsystems.iocc.security.datamigration.UserManager</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
